@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <p id="output">
+
+    </p>
+
+
+    <script>
+        //task 3.1: creating and Accessing Objects
+        const student = {
+            name: 'Kavindu',
+            age: 21,
+            faculty: 'Computing',
+            subjects: ['Web Development', 'Database Systems', 'Programming']
+        };
+
+        console.log(student);
+
+        //print the student's name and faculty
+        document.getElementById('output').innerText = `Task 3.1\nStudent Name: ${student.name}, Faculty: ${student.faculty}`;// Displaying the result
+
+        //add a new property called year with value 2025
+        student.year = 2025;
+        document.getElementById('output').innerText += `\nAfter adding year: ${JSON.stringify(student)}`;// Displaying the updated object
+
+        //change the age to 22
+        student.age = 22;
+        document.getElementById('output').innerText += `\nAfter changing age: ${JSON.stringify(student)}`;// Displaying the result
+
+        //print all subjects
+        document.getElementById('output').innerText += `\nSubjects: ${student.subjects.join(', ')}`;// Displaying the subjects
+        
+    </script>
+</body>
+</html>
