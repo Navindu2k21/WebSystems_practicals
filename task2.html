@@ -6,6 +6,39 @@
     <title>Task 2</title>
 </head>
 <body>
-    
+    <p id="output">
+
+    </p>
+
+    <script>
+        //task 2.1: Transforming Arrays
+        const numbers = [2,5,8,10,12];
+        console.log(numbers);
+
+        //use map to create a new array doubles each number
+        const doubledNumbers = numbers.map(num => num * 2);
+        document.getElementById('output').innerText = `Task 2.1\nOriginal Numbers: ${numbers.join(', ')}\nDoubled Numbers: ${doubledNumbers.join(', ')}`;// Displaying the result
+
+        //use filter to keep only numbers greater than 6
+        const filteredNumbers = numbers.filter(num => num > 6);
+        document.getElementById('output').innerText += `\nFiltered Numbers (greater than 6): ${filteredNumbers.join(', ')}`;// Displaying the result
+
+        //use reduce to find the sum of all numbers
+        const sumOfNumbers = numbers.reduce((acc, curr) => acc + curr, 0);
+        document.getElementById('output').innerText += `\nSum of all Numbers: ${sumOfNumbers}`;// Displaying the result
+
+        //task 2.2: Searching and Sorting
+        //check if 8 is in the array using includes
+        const includesEight = numbers.includes(8);
+        document.getElementById('output').innerText += `\n\nTask 2.2\nArray includes 8: ${includesEight}`;// Displaying the result
+
+        //find the index of 10
+        const indexOfTen = numbers.indexOf(10);
+        document.getElementById('output').innerText += `\nIndex of 10: ${indexOfTen}`;// Displaying the result
+
+        //sort the array in ascending order
+        const sortedNumbers = [...numbers].sort((a, b) => a - b);
+        document.getElementById('output').innerText += `\nSorted Numbers (Ascending): ${sortedNumbers.join(', ')}`;// Displaying the result
+    </script>
 </body>
 </html>
