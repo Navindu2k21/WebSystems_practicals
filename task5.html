@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <p id="output">
+
+    </p>
+
+    <script>
+        //create a script that stores a list of products (name,price,quantity) and calculates the total value of all products
+        const products = [
+            {name: 'Keyboard', price: 2500, quantity: 2},
+            {name: 'Mouse', price: 1500, quantity: 3},
+            {name: 'Monitor', price: 22000, quantity: 1}
+        ];
+        console.log(products);
+
+        //use reduce to calculate the total value 
+        const totalValue = products.reduce((total, product) => {
+            return total + (product.price * product.quantity);
+        }, 0);
+        document.getElementById('output').innerText = `Task 5\nTotal Value of All Products: Rs. ${totalValue}`;// Displaying the total value
+    </script>
+</body>
+</html>
