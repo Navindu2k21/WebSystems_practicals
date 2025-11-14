@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1.1</title>
+    <title>Lab Sheet 01 - Working with Arrays and Objects in Java Script</title>
 </head>
 <body>
     <p id="output">
 
     </p>
     <script>
+        //task 1.1: Creating and Accessing Arrays
         const fruits = ['Apple', 'Banana', 'Mango', 'Orange', 'Grapes'];
         console.log(fruits);
 
         //print the first and last item in the array
         var firstFruit = fruits[0];// Accessing the first element
         var lastFruit = fruits[fruits.length - 1];// Accessing the last element
-        document.getElementById('output').innerText = `First Fruit: ${firstFruit}, Last Fruit: ${lastFruit}`;// Displaying the result
+        document.getElementById('output').innerText = `Task 1.1\nFirst Fruit: ${firstFruit}, Last Fruit: ${lastFruit}`;// Displaying the result
         
         //add a new fruit at the end of the array
         fruits.push('Pineapple');
@@ -29,6 +30,29 @@
         //find the length of the array
         var lengthOfFruits = fruits.length; // Getting the length of the array
         document.getElementById('output').innerText += `\nLength of fruits array: ${lengthOfFruits}`;// Displaying the length
-    </script>
+
+
+        //task 1.2: Looping Through an Array
+        //Using forEach loop
+        document.getElementById('output').innerText += `\n\nTask 1.2\nFruits in the array displaying using forEach loop:`;
+        fruits.forEach((fruits) => {
+            console.log(fruits);
+            document.getElementById('output').innerText += `\n${fruits}`;// Displaying each fruit
+        });
+
+        //Using for loop
+        document.getElementById('output').innerText += `\n\nFruits in the array displaying using for loop:`;
+        for (let i = 0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+            document.getElementById('output').innerText += `\n${fruits[i]}`;// Displaying each fruit
+        }
+
+        //difference between forEach and for loop
+        document.getElementById('output').innerText += `\n\nDifference between forEach and for loop:
+        \n- forEach is a method that executes a provided function once for each array element, 
+        while for loop is a control flow statement that allows code to be executed repeatedly based on a condition.
+        - forEach cannot be broken out of using break or continue statements, 
+        whereas for loop can be controlled using these statements.`;
+        </script>
 </body>
 </html>
