@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <p id="output">
+
+    </p>
+
+    <script>
+        //task 4.1: array of objects
+        const students = [
+            {name: 'Kavindu', age: 21, faculty: 'Computing'},
+            {name: 'Nimesha', age: 22, faculty: 'Engineering'},
+            {name: 'Dinuka', age: 23, faculty: 'Business'}
+        ];
+        console.log(students);
+
+        //print all student names
+        document.getElementById('output').innerText = `Task 4.1\nStudent Names:`;
+
+        students.forEach(student => {
+            console.log(student.name);
+            document.getElementById('output').innerText += `\n${student.name}`;// Displaying each student name
+        });
+
+
+        //use filter to find students older than 21
+        const olderStudents = students.filter(student => student.age > 21);
+        document.getElementById('output').innerText += `\n\nStudents older than 21:`;
+
+        olderStudents.forEach(student => {
+            console.log(student.name);
+            document.getElementById('output').innerText += `\n${student.name}`;// Displaying each student name
+        });
+
+
+        //use map to create an array of all faculty names
+        const facultyNames = students.map(student => student.faculty);
+        document.getElementById('output').innerText += `\n\nFaculty Names: ${facultyNames.join(', ')}`;// Displaying the faculty names
+
+
+        //task 4.2: object containing an array of objects
+
+        const classroom = {
+            className: 'IT2025',
+            teacher: 'Mr. Perera',
+            students: [
+                {name: 'Kavindu', age: 21},
+                {name: 'Nimesha', age: 22},
+                {name: 'Dinuka', age: 23}
+            ]
+        };
+        console.log(classroom);
+
+        //print the teacher's name
+        document.getElementById('output').innerText += `\n\nTask 4.2\nTeacher's Name: ${classroom.teacher}`;// Displaying the teacher's name
+
+        //add a new student to the array
+        classroom.students.push({name: 'Saman', age: 20});
+        document.getElementById('output').innerText += `\nAfter adding a new student: ${JSON.stringify(classroom.students)}`;// Displaying the updated students array
+
+        //print all student names in the classroom
+        document.getElementById('output').innerText += `\nStudent Names in the Classroom:`;
+        classroom.students.forEach(student => {
+            console.log(student.name);
+            document.getElementById('output').innerText += `\n${student.name}`;// Displaying each student name
+        });
+    </script>
+</body>
+</html>
